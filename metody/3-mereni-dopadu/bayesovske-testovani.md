@@ -32,7 +32,7 @@
 
 ## Příklad z marketingu
 
-Tlačítko A mělo 12,0 % prokliků, B 13,5 %. Klasicky p = 0,12, tedy „není průkazné“. Bayesovsky je B lepší s pravděpodobností 94 % a přinese 440 až 4 410 Kč měsíčně, riziko je kolem 40 Kč.
+Tlačítko A mělo 12,0 % prokliků, B 13,5 %. Klasicky p = 0,12, tedy „není průkazné“. Bayesovsky je B lepší s pravděpodobností 94 % Když je B lepší, vyděláme v průměru asi 2 630 Kč měsíčně, když je lepší A, proděláme asi 690 Kč. Rozhodnutí je jasné.
 
 *Čísla jsou vymyšlená pro ilustraci.*
 

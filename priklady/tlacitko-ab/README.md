@@ -24,7 +24,7 @@ Srovnávač má 3 000 návštěv měsíčně, proklik má hodnotu 54 Kč (schvá
 1. Klasické vyhodnocení (test dvou podílů) pro srovnání.
 2. Bayesovské vyhodnocení: z počtů prokliků se spočítá rozdělení skutečné míry prokliku obou variant
    (Beta rozdělení) a z 20 000 vzorků pravděpodobnost, že je B lepší.
-3. Rozdíl se převede na Kč za měsíc a spočítá se, kolik riskujeme, když zvolíme B a mýlíme se.
+3. Rozdíl se převede na Kč za měsíc: kolik vyděláme, když je B lepší, a kolik proděláme, když je lepší A.
 
 ## Výsledek
 
@@ -33,7 +33,9 @@ Srovnávač má 3 000 návštěv měsíčně, proklik má hodnotu 54 Kč (schvá
 | Klasicky | p = 0,12, „rozdíl není průkazný“, tedy zase „uvidíme“ |
 | Bayesovsky | B je lepší s pravděpodobností 94 % |
 | Přínos B za měsíc (80 % scénářů) | 440 až 4 410 Kč, průměr 2 440 Kč |
-| Riziko, když se mýlíme | v průměru 40 Kč měsíčně |
+| Když je B lepší (94 %) | vyděláme v průměru asi 2 630 Kč měsíčně |
+| Když je lepší A (6 %) | proděláme v průměru asi 690 Kč měsíčně |
+| Očekávaná ztráta přes všechny případy | 40 Kč měsíčně (690 Kč × 6 %, proto tak málo) |
 
 **Rozhodnutí:** nasadit B. Riziko je malé proti očekávanému přínosu.
 

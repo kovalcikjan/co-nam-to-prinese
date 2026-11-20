@@ -58,14 +58,18 @@ def main():
     gain = [d * VISITS_PER_MONTH * VALUE_PER_CLICK for d in diffs]
     p_better = sum(d > 0 for d in diffs) / DRAWS
     g10, g50, g90, gmean = pct(gain, .1), pct(gain, .5), pct(gain, .9), sum(gain) / DRAWS
-    risk = sum(max(-g, 0) for g in gain) / DRAWS  # expected monthly loss if we pick B and B is in fact worse
+    risk = sum(max(-g, 0) for g in gain) / DRAWS  # expected monthly loss of picking B, averaged over all cases
+    win = sum(g for g in gain if g > 0) / max(1, sum(g > 0 for g in gain))  # average gain in the cases where B is better
+    loss = sum(-g for g in gain if g < 0) / max(1, sum(g < 0 for g in gain))  # average loss in the cases where A is better
 
     print("Ilustrační čísla, cleverpujcky.cz, tlačítko ve srovnávači")
     print(f"A: {proc(A[1] / A[0], 1)} prokliků, B: {proc(B[1] / B[0], 1)} prokliků")
     print(f"Klasické vyhodnocení: p = {p_value:.2f}".replace(".", ",") + " → rozdíl není průkazný")
     print(f"Bayesovsky: B je lepší s pravděpodobností {proc(p_better, 1)}")
     print(f"Přínos B za měsíc: 80 % mezi {kc(g10)} a {kc(g90)}, průměr {kc(gmean)}")
-    print(f"Když se mýlíme, riskujeme v průměru {kc(risk)} měsíčně")
+    print(f"Když je B lepší ({proc(p_better)}): vyděláme v průměru {kc(win)} měsíčně")
+    print(f"Když je lepší A ({proc(1 - p_better)}): proděláme v průměru {kc(loss)} měsíčně")
+    print(f"Očekávaná ztráta přes všechny případy: {kc(risk)} měsíčně")
 
     p_txt = f"{p_value:.2f}".replace(".", ",")  # computed outside the template, older Pythons need that
     OUT.write_text(f"""<!doctype html><html lang="cs"><meta charset="utf-8"><title>Tlačítko A/B: vyhodnocení</title>
@@ -77,7 +81,9 @@ def main():
 Klasicky: p = {p_txt}, „rozdíl není průkazný“.</p>
 <p class="big">B je lepší s pravděpodobností {proc(p_better)}</p>
 <p>Přínos B za měsíc: 80 % mezi {kc(g10)} a {kc(g90)}, průměr {kc(gmean)}.<br>
-Když se mýlíme, riskujeme v průměru {kc(risk)} měsíčně.</p>
+Když je B lepší ({proc(p_better)}): vyděláme v průměru {kc(win)} měsíčně.<br>
+Když je lepší A ({proc(1 - p_better)}): proděláme v průměru {kc(loss)} měsíčně.<br>
+Očekávaná ztráta přes všechny případy: {kc(risk)} měsíčně.</p>
 <p>Rozhodnutí: nasadit B. Riziko je malé proti očekávanému přínosu.</p>
 </html>""".replace(f"{DRAWS:,}", f"{DRAWS:,}".replace(",", " ")), encoding="utf-8")
     print(f"Výstup: {OUT}")

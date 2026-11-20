@@ -18,7 +18,7 @@ difference-in-differences (`metody/3-mereni-dopadu/difference-in-differences.md`
    a srovnávací skupiny před změnou a po ní. Upozorni, když jde o citlivá data.
 3. **Vyhodnocení.** Napiš a spusť `projekty/<nazev>/mereni.py`:
    - A/B test nebo kontrolní skupina: bayesovsky (Beta rozdělení), pravděpodobnost, že varianta pomohla,
-     přínos v Kč jako rozpětí a riziko, když se mýlíme. Pro srovnání i klasické p.
+     přínos v Kč jako rozpětí, průměrný zisk, když je nová varianta lepší, a průměrnou ztrátu, když je horší. Pro srovnání i klasické p.
    - Bez náhodného rozdělení: rozdíl změn proti srovnatelné skupině, s kontrolou, že se před změnou vyvíjely podobně.
 4. **Porovnání s odhadem.** Padl skutečný výsledek do rozpětí z kroku 1? Zapiš to do kalibračního deníku
    (`sablony/kalibracni-denik.md` jako vzor, deník v projektu).
