@@ -1,0 +1,15 @@
+# secrets (evisions baseline)
+.env*
+!.env.example
+*-sa.json
+*.key
+*.pem
+rclone.conf
+/backups/
+.DS_Store
+
+# your own projects stay on your computer (only the folder description is shared)
+projekty/*
+!projekty/README.md
+
+__pycache__/
