@@ -151,4 +151,3 @@ jsou vymyšlená** pro přednášku, na příkladu webu cleverpujcky.cz.
   and Data Science, Springer.
 - Buehler, Griffin, Ross (1994): *Exploring the „Planning Fallacy“*, Journal of Personality and Social Psychology
   67(3), s. 366–381.
-- Flyvbjerg, Gardner (2023): *How Big Things Get Done*.
