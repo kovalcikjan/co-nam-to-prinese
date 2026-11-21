@@ -7,6 +7,13 @@ Když se někdo zeptá „a co nám to přinese?“, neodpovídej číslem z hla
 Tady najdeš 40 metod ze 7 oblastí, ke každé vysvětlení pro nestatistiky a hotový prompt, a vedené kroky,
 které tě provedou od odhadu po vyhodnocení.
 
+## Prezentace
+
+Celá přednáška jako jeden HTML soubor: [prezentace/a-co-nam-to-prinese.html](prezentace/a-co-nam-to-prinese.html).
+GitHub ji ukáže jen jako kód: otevři soubor, vpravo nahoře klikni na **Download raw file** a stažený soubor
+otevři v prohlížeči. Funguje bez internetu. Šipky posouvají slidy, **F** celá obrazovka, **P** pohled řečníka
+s poznámkami.
+
 ## Jak začít v Claude Code (3 kroky)
 
 1. Stáhni si repo: zelené tlačítko **Code → Download ZIP** a rozbal, nebo
